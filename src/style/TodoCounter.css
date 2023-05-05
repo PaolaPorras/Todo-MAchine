@@ -1,0 +1,13 @@
+.TodoCounter {
+    font-size: 2em;
+    text-align: center;
+    margin: 0;
+    padding: 24px;
+    color: #D14D72;
+    font-family: 'Quicksand', sans-serif;
+
+    
+  }
+  .TodoCounter-completed{
+    color:black;
+  }
