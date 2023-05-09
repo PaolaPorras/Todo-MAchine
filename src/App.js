@@ -9,7 +9,7 @@ import { CreateTodoButton } from './CreateTodoButton'
 
 const defaultTodos = [ 
   {text:"Tarea 1", completed: true},
-  {text:"Resumen", completed: true},
+  {text:"Resumen", completed: false},
   {text:"Proyecto", completed: false},
 ];
 
@@ -31,15 +31,35 @@ function App() {
       return todoText.includes(searchText);
     })
   
-  console.log('Los usuarios buscan ToDos de ' + searchValue);
+  //Marcando completados los ToDos
+  const completeTodo = (text) => {
+    const newTodos = [...todos];
+    const todoIndex = newTodos.findIndex(
+      (todo) => todo.text === text
+    );
+    newTodos[todoIndex].completed = true;
+    setTodos(newTodos);
+
+  };
+
+  //Eliminar ToDos
+  const deleteTodo = (text) => {
+    const newTodos = [...todos];
+    const todoIndex = newTodos.findIndex(
+      (todo) => todo.text === text
+    );
+    newTodos.splice(todoIndex, 1);
+    setTodos(newTodos);
+  };
 
   return ( 
     //solo soporta el envio de un componente, pide el envio de una etiqueta por componente
     <React.Fragment> 
       <TodoCounter 
       completed={completedTodos} 
-      total={totalTodos}/>
-      
+      total={totalTodos}
+      />
+
       <TodoSearch 
         searchValue={searchValue}
         setSearchValue={setSearchValue}/>
@@ -48,8 +68,12 @@ function App() {
         {searchedTodos.map(todo => (
           <TodoItem 
           key={todo.text} 
-          text={todo.text} 
-          completed={todo.completed}/>
+          text={todo.text}
+          completed={todo.completed}
+          onComplete={() => completeTodo(todo.text)}
+          onDelete={() => deleteTodo(todo.text)}
+          />
+          
         ))}
         
         </TodoList>
