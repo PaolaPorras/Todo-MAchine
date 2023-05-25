@@ -1,0 +1,54 @@
+.Icon {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20px;
+    width: 20px;
+    font-size: 1em;
+    font-weight: bold;
+  }
+  
+  .Icon-container-check {
+    position: absolute;
+    left: 12px;
+    background:#fff;
+    color: #408e91;
+    border-radius: 50%;
+    border:2px solid #fcc8d1;
+    padding:5px;
+  }
+  .Icon-container-check--active {
+    background:#ffabab;
+    color: #d14d72;
+    border-radius: 50%;
+    border:2px solid #ffabab;
+  }
+  
+  .Icon-container-delete {
+    position: absolute;
+    top: -14px;
+    right: 0;
+    border-radius: 50%;
+    box-shadow: 0px 0px 5px 0px  #d14d72; 
+    color: #fff;
+    padding:2px;
+  }
+  .Icon-container-delete:hover .Icon-svg{
+    border-radius: 50%;
+    background-color: #fef2f4;
+    color :#d14d72;
+    padding:4px;
+  }
+
+  .Icon-svg{
+    width: 20px;
+    height:20px;
+  }
+
+  .Icon-container-check:hover .Icon-svg{
+    fill:green;
+  }
+  .Icon-container-delete:hover .Icon-svg{
+    fill: #ED2B2A;
+  }
