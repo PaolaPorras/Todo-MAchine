@@ -5,6 +5,7 @@
     border-radius: 50%;
     cursor: pointer;
     font-size: 50px;
+    z-index:1;
     position: fixed;
     bottom: 24px;
     right: 24px;

@@ -3,10 +3,12 @@ import { TodoCounter } from '../TodoCounter' ;
 import { TodoSearch } from '../TodoSearch' ;
 import { TodoList } from '../TodoList' ;
 import { TodoItem } from '../TodoItem' ;
-import { CreateTodoButton } from '../CreateTodoButton';
 import { TodosLoading} from '../TodosLoading' ;
 import { TodosError } from '../TodosError';
 import { EmptyTodos } from '../EmptyTodos' ;
+import { CreateTodoButton } from '../CreateTodoButton';
+import { TodoForm } from '../TodoForm';
+import { Modal } from '../Modal';
 import { TodoContext } from '../TodoContext';
 
 
@@ -17,6 +19,8 @@ function AppUI() {
     searchedTodos,
     completeTodo,
     deleteTodo,
+    openModal,
+    setOpenModal,
   } = React.useContext(TodoContext)
   return ( 
     //solo soporta el envio de un componente, pide el envio de una etiqueta por componente
@@ -40,7 +44,7 @@ function AppUI() {
           </>
           )}
           {error && <TodosError/>}
-          {(!loading && searchedTodos.length == 0) &&<EmptyTodos/>}
+          {(!loading && searchedTodos.length === 0) &&<EmptyTodos/>}
 
           {searchedTodos.map(todo => (
             <TodoItem 
@@ -55,7 +59,14 @@ function AppUI() {
         
         </TodoList>
 
-      <CreateTodoButton/> 
+      <CreateTodoButton setOpenModal={setOpenModal}/> 
+  
+      {openModal && (
+        <Modal>
+          <TodoForm />
+        </Modal>
+      )}
+
     </React.Fragment>
   );
 }
