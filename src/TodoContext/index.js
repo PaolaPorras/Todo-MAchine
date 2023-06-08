@@ -28,6 +28,16 @@ function TodoProvider({children}){
           return todoText.includes(searchText);
         });
       
+      //Añair Todos
+
+      const addTodo = (text) => {
+        const newTodos = [...todos];
+        newTodos.push({
+          text,
+          completed: false
+        })
+        saveTodos(newTodos);
+      }
       //Marcando completados los ToDos
       const completeTodo = (text) => {
         const newTodos = [...todos];
@@ -36,7 +46,6 @@ function TodoProvider({children}){
         );
         newTodos[todoIndex].completed = true;
         saveTodos(newTodos);
-    
       };
     
       //Eliminar ToDos
@@ -62,6 +71,7 @@ function TodoProvider({children}){
           deleteTodo,
           openModal,
           setOpenModal,
+          addTodo,
         }}>
           {children}
         </TodoContext.Provider>

@@ -46,6 +46,10 @@
     height:20px;
   }
 
+  .Icon-container-active{    
+   background:#fcc8d1;
+   color:#fff;
+  }
   .Icon-container-check:hover .Icon-svg{
     fill:green;
   }

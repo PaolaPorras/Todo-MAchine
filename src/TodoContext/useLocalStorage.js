@@ -1,20 +1,17 @@
-import React from "react";
+import React from 'react';
 
-function useLocalStorage(itemName, initialValue){
-
+function useLocalStorage(itemName, initialValue) {
   const [item, setItem] = React.useState(initialValue);
-
   const [loading, setLoading] = React.useState(true);
-
   const [error, setError] = React.useState(false);
   
   React.useEffect(() => {
     setTimeout(() => {
-      try{
+      try {
         const localStorageItem = localStorage.getItem(itemName);
-  
-        let parsedItem;
     
+        let parsedItem;
+  
         if (!localStorageItem) {
           localStorage.setItem(itemName, JSON.stringify(initialValue));
           parsedItem = initialValue;
@@ -22,39 +19,39 @@ function useLocalStorage(itemName, initialValue){
           parsedItem = JSON.parse(localStorageItem);
           setItem(parsedItem);
         }
-    
+  
         setLoading(false);
-      } catch (error){
+      } catch(error) {
         setLoading(false);
         setError(true);
       }
     }, 2000);
+  });
 
-  }, []);
-  
-    //guardar y actualiza el estado y localStoragede TODOS
-    const saveItem = (newItem) => {
-      localStorage.setItem(itemName, JSON.stringify(newItem));
-      setItem(newItem);
-    };
-    
-    return {
-      item, 
-      saveItem, 
-      loading, 
-      error};
-  }
+  const saveItem = (newItem) => {
+    localStorage.setItem(itemName, JSON.stringify(newItem));
+    setItem(newItem);
+  };
 
-  export{useLocalStorage};
+  return {
+    item,
+    saveItem,
+    loading,
+    error,
+  };
+}
 
-  // localStorage.removeItem('TODOS_V1');
+export { useLocalStorage };
 
-  // const defaultTodos = [
-  //   { text: 'Iniciar TODOS', completed: true},
-  //   { text: 'Tomar el Curso de Intro a React.js', completed:false},
-  //   { text: 'Crear TODOS', completed: false},
-  //   { text: 'Hacer estilos de TODOS', completed: false},
-  //   { text: 'Usar estados derivados', completed: true},
-  // ];
 
-  // localStorage.setItem('TODOS_V1', JSON.stringify(defaultTodos));
+// localStorage.removeItem('TODOS_V1');
+
+// const defaultTodos = [
+//   { text: 'Cortar cebolla', completed: true },
+//   { text: 'Tomar el Curso de Intro a React.js', completed: false },
+//   { text: 'Llorar con la Llorona', completed: false },
+//   { text: 'LALALALALA', completed: false },
+//   { text: 'Usar estados derivados', completed: true },
+// ];
+
+// localStorage.setItem('TODOS_V1', JSON.stringify(defaultTodos));
