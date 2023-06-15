@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+TO-DO MAKER
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Tabla de contenidos
 
-## Available Scripts
+    Descripcion
+        El desafio
+        Screenshot
+        Links
+    Mi proceso
+        Hecho con
+        Lo aprendido
+        En desarrollo
+    Autor
 
-In the project directory, you can run:
+Descripcion
 
-### `npm start`
+Aplicativo administrador de tareas, permite filtrar, agregar, eliminar, marcar o desmarcar las diferentes tareas (TO DO's)
+El desafio
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+El usuario deberia poder
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+    Ver el layout optimo dependiendo de su tamano de pantalla.
+    Ver el listado de to do's y poder manipularlo
+    Ver la interaccion cuando se coloca el mouse encima de los elementos.
+    Crear, filtrar, eliminar, marcar o desmarcar sus tareas pendientes.
+    Guardar en local storage la informacion cada vez que recargue la pagina automaticamente
+    Abrir un modal para agregar nuevas tareas
+    Mostrar una interfaz de carga
 
-### `npm test`
+Links
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    Repositorio: GITHUB
+    Deploy: PAGES
 
-### `npm run build`
+Mi proceso
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Este es el primer aplicativo que hago con React, me siento contento con el resultado. Siento que los demas cursos que he realizado hasta ahora me facilitaron entender los conceptos aqui presentados, hay partes que todavia se me dificultan pero mas que todo en los estilos. El tema de logica y demas lo logre entender bastante bien.
+Hecho con
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    Semantic HTML5 markup
+    CSS custom properties
+    Flexbox
+    CSS Grid
+    Mobile-first workflow
+    Simple JavaScript
+    Create React App
+    React
+    localStorage Web API
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Lo que aprendi
 
-### `npm run eject`
+Siento que aprendi bastante de los hooks de React y los diferentes usos que le puedo dar para solucionar problemas de manera mas facil que suando vanilla JS.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Ademas aprendi el uso de nuevas funcionalidades de interfaz como modales y loading skeletons y demas trucos con CSS que me ayudaron a tener una pagina mucho mas viva pero usando React en este caso.
+En desarrollo
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Queda pendiente para agregar a la aplicacion ciertas validaciones a los inputs para evitar que el usuario anada tareas sumamente largas y arruinen la interfaz. Ademas tambien manejar los contenedores para que admitan tareas mas largas que simplemente dos o tres palabras.
